@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Loading...</title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+    <h1>Post Successful</h1>
+    <p>Share Urn: <%= shareUrn.id %></p>
+  </body>
+  <script>
+     var shareUrn = <%- JSON.stringify(shareUrn)  %>
+    window.opener.postMessage({'type': 'shareUrn', 'shareUrn': shareUrn}, '*')
+    window.close();
+  </script>
+</html>
